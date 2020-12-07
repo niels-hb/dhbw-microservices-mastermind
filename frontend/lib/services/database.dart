@@ -1,8 +1,7 @@
 import 'package:dhbw_swe_mastermind_frontend/util/bloc_state.dart';
 import 'package:flutter/foundation.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:sembast/sembast.dart';
-import 'package:sembast/sembast_io.dart';
+import 'package:sembast_web/sembast_web.dart';
 
 class DatabaseService extends ChangeNotifier with BlocState {
   Database _db;
@@ -23,11 +22,10 @@ class DatabaseService extends ChangeNotifier with BlocState {
   void _initDatabase() async {
     state = BlocStateSelector.waiting;
 
-    DatabaseFactory databaseFactory = databaseFactoryIo;
-    String appDocPath = (await getApplicationDocumentsDirectory()).path;
+    DatabaseFactory databaseFactory = databaseFactoryWeb;
 
     _db = await databaseFactory.openDatabase(
-      '$appDocPath/dhbw_swe_mastermind_frontend.db',
+      'dhbw_swe_mastermind_frontend.db',
     );
 
     state = BlocStateSelector.created;
