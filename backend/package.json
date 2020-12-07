@@ -1,0 +1,23 @@
+{
+    "name": "mastermind",
+    "version": "0.1.0",
+    "description": "DHBW Game",
+    "scripts": {
+        "start:prod": "cd ./backend && yarn run start:prod",
+        "presetup": "cd ./backend && yarn install"
+    },
+    "repository": "git+ssh://git@gitlab.com:lukas.berwanger/dhbw-swe-mastermind-backend.git",
+    "keywords": [
+        "NodeJS",
+        "TypeScript",
+        "express"
+    ],
+    "homepage": "https://derbl4ck.com",
+    "author": "Lukas Berwanger <lb@qloc.de>",
+    "contributors": [],
+    "license": "MIT",
+    "dependencies": {
+        "@types/node": "^13.9.2",
+        "ts-node": "^8.7.0"
+    }
+}
